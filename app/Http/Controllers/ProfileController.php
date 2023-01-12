@@ -82,4 +82,16 @@ class ProfileController extends Controller
 
         return view('profile.item', ['items' => $items]);
     }
+
+    public function allJob()
+    {
+        $jobs = DB::table('jobs as j')
+        ->select('j.id', 'j.job_name', 'j.salary', 'j.description')
+        ->where('j.user_id', '=', auth()->user()->id)
+        ->get();
+
+        // dd($items);
+
+        return view('profile.job', ['jobs' => $jobs]);
+    }
 }

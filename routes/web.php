@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile-password', [ProfileController::class, 'password'])->name('profile.password');
     Route::get('/profile-delete', [ProfileController::class, 'delete'])->name('profile.delete');
     Route::get('/profile-item', [ProfileController::class, 'allItem'])->name('profile.item');
+    Route::get('/profile-job', [ProfileController::class, 'allJob'])->name('profile.job');
 });
 
 Route::middleware('auth')->group(function () {
@@ -46,6 +48,15 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit-item/{item}/edit', [ItemController::class, 'edit'])->name('item.edit');
         Route::delete('/hapus-item/{item}', [ItemController::class, 'destroy'])->name('item.destroy');
     });
+    Route::prefix('/dashboard')->group(function() {
+        Route::get('/add-job', [JobController::class, 'create'])->name('job.create');
+        Route::post('/store-job', [JobController::class, 'store'])->name('job.store');
+        Route::get('/view-job/{job}', [JobController::class, 'show'])->name('job.view');
+        Route::put('/update-job/{job}', [JobController::class, 'update'])->name('job.update');
+        Route::get('/edit-job/{job}/edit', [JobController::class, 'edit'])->name('job.edit');
+        Route::delete('/hapus-job/{job}', [JobController::class, 'destroy'])->name('job.destroy');
+    });
 });
 
 require __DIR__.'/auth.php';
+require __DIR__.'/admin.php';

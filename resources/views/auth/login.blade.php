@@ -3,6 +3,7 @@
         <div class="flex items-center flex-auto min-w-0 bg-white">
           <div class="h-full hidden md:flex flex-auto items-center justify-center p-10 overflow-hidden bg-[#056676] text-white bg-no-repeat bg-cover relative">
             <div class="w-full max-w-md z-10">
+                
             </div>
           </div>
           <div class="flex items-center justify-center w-full w-2/5 bg-white">
@@ -50,7 +51,7 @@
                 </div>
 
                 <div class="flex justify-center mt-4">
-                    <p class="mt-2 text-sm text-gray-500">You don't have account? <a href="{{ route('register') }}" class="hover:text-blue-400">Sign in here!</a></p>
+                    <p class="mt-2 text-sm text-gray-500">You don't have account? <a href="{{ route('register') }}" class="hover:text-blue-400">Sign up here!</a></p>
                 </div>
             </form>
             </div>

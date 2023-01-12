@@ -11,7 +11,7 @@
 
             <section class="space-y-6 w-full bg-white p-4 rounded-lg shadow-lg">
                 <div class="font-medium text-lg mb-4">
-                    Item for sale
+                    Job
                 </div>
 
             <div class="relative overflow-x-auto">
@@ -19,44 +19,31 @@
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
                             <th scope="col" class="px-6 py-3">
-                                Item name
+                                Job name
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Category
+                                salary
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Price
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Status
+                                Action
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($items as $item)
+                        @foreach ($jobs as $job)
                         <tr class="bg-white border-b">
                             <td class="px-6 py-4">
-                                {{ $item->item_name }}
+                                {{ $job->job_name }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $item->cate_name }}
+                                {{ $job->salary }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $item->price }}
-                            </td>
-                            <td class="px-6 py-4">
-                                @if ($item->status === 1)
-                                Available
-                                @elseif ($item->status === 2)
-                                Sold
-                                @endif
-                            </td>
-                            <td>
-                                <form action="{{ route('item.destroy', $item->id) }}" method="POST">
+                                <form action="{{ route('job.destroy', $job->id) }}" method="POST">
                                     @csrf
                                     @method('delete')
 
-                                    <a href="{{ route('item.edit', $item->id) }}" class="hover:text-green-400">
+                                    <a href="{{ route('job.edit', $job->id) }}" class="hover:text-green-400">
                                         <i class="uil uil-edit text-xl "></i>
                                     </a>
 

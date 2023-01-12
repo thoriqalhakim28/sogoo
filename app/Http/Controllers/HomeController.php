@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use App\Models\Category;
+use App\Models\Job;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,9 +16,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         $items = Item::with('user')->get();
-        $categories = Category::take(8)->get();
-        return view('dashboard', ['categories' => $categories], ['items' => $items]);
+        $jobs = Job::with('user')->get();
+        return view('dashboard', ['jobs' => $jobs], ['items' => $items]);
     }
 
     /**

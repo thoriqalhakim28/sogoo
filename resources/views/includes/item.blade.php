@@ -1,5 +1,6 @@
 <div class="max-w-6xl mx-auto mt-8">
-    <div class="p-4">
+    <div class="p-4 bg-white shadow-lg rounded-lg">
+        <p class="mb-4 font-semibold text-xl">Items</p>
         <div class="grid grid-cols-5 gap-2">
             <!-- Card -->
             @foreach ($items as $item)

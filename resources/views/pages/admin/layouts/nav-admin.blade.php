@@ -2,25 +2,29 @@
 <nav class="bg-white shadow-sm">
     <div class="max-w-6xl mx-auto py-4">
         <div class="flex justify-between items-center">
-            <!-- Logo -->
-            <div class="font-extrabold text-3xl" style="font-family: 'Sofia Sans', sans-serif;">
-                <a href="{{ url('/dashboard') }}">
-                    <p class="text-[#056676]">So<span class="text-[#97DECE]">goo</span></p>
-                </a>
-            </div>
+            <div class="flex">
+                <!-- Logo -->
+                <div class="font-extrabold text-3xl" style="font-family: 'Sofia Sans', sans-serif;">
+                    <a href="{{ url('/dashboard') }}">
+                        <p class="text-[#056676]">So<span class="text-[#97DECE]">goo</span></p>
+                    </a>
+                </div>
 
-            <!-- Search -->
-            <div class="w-full max-w-xl flex">
-                <input type="text" class="w-full border border-[#97DECE] border-r-0 rounded-l-lg focus:outline-none focus:ring-inset" placeholder="Search">
-                <button class="border px-2 rounded-r-lg border-[#97DECE] bg-[#97DECE] hover:bg-[#00dcaa] hover:text-white">Search</button>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{ route('user') }}" :active="request()->routeIs('user')">
+                        {{ __('User') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{ route('category') }}" :active="request()->routeIs('category')">
+                        {{ __('Category') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <!-- Sell Items & Jobs-->
-                <a href="{{ route('job.create') }}" class="border p-2 px-4 rounded-lg bg-[#97DECE] hover:bg-[#00dcaa]">Post Job</a>
-                
-                <a href="{{ route('item.create') }}" class="ml-2 border p-2 px-4 rounded-lg bg-[#97DECE] hover:bg-[#00dcaa]">Sell items</a>
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">

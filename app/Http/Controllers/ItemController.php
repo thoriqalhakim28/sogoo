@@ -82,8 +82,6 @@ class ItemController extends Controller
     {
         $items = Item::with('user')->where('id', $item)->first();
         return view('includes.detail-item', ['items' => $items]);
-
-
     }
 
     /**

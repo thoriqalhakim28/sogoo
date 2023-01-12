@@ -13,19 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('jobs', function (Blueprint $table) {
             $table->id();
-            $table->string('item_name');
+            $table->string('job_name');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('cate_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('cate_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->integer('price');
-            $table->string('image');
-            $table->string('location');
-            $table->string('condition');
+            $table->integer('salary');
             $table->longText('description');
-            $table->tinyInteger('status');
             $table->timestamps();
         });
     }
@@ -37,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('jobs');
     }
 };
