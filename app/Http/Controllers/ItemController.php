@@ -114,7 +114,6 @@ class ItemController extends Controller
             'name' => ['required'],
             'cate_id' => ['required'],
             'price' => ['required'],
-            'image' => ['required', 'image', 'mimes:png,jpg'],
             'location' => ['required'],
             'condition' => ['required'],
             'description' => ['required'],

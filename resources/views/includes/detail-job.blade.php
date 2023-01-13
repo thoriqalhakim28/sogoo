@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="flex justify-center mt-4">
-                    <a href="" class="bg-[#97DECE] p-2 px-6 rounded-lg hover:bg-[#00dcaa]">Send PM</a>
+                    <a href="https://api.whatsapp.com/send?phone={{ $jobs->user->phoneNumber }}" class="bg-[#97DECE] p-2 px-6 rounded-lg hover:bg-[#00dcaa]">Send PM</a>
                 </div>
             </div>
         </div>

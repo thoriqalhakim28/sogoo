@@ -47,13 +47,6 @@
                                     <x-input-error :messages="$errors->get('price')" class="mt-2" />
                                 </div>
 
-                                <!-- Image -->
-                                <div class="mt-4">
-                                    <x-input-label for="image" :value="__('Image')" />
-                                    <x-text-input id="image" class="block mt-1 w-full" type="file" name="image" value="{{ $items->image }}" accept="images/*" onchange="document.getElementById('output').src = window.URL.createdObjectURL(this.files[0])" required autofocus />
-                                    <x-input-error :messages="$errors->get('image')" class="mt-2" />
-                                </div>
-
                             </div>
                             <div class="">
                                 <!-- Location -->
