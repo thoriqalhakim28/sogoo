@@ -19,7 +19,7 @@
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Sell Items & Jobs-->
                 <a href="{{ route('job.create') }}" class="border p-2 px-4 rounded-lg bg-[#97DECE] hover:bg-[#00dcaa]">Post Job</a>
-                
+
                 <a href="{{ route('item.create') }}" class="ml-2 border p-2 px-4 rounded-lg bg-[#97DECE] hover:bg-[#00dcaa]">Sell items</a>
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">

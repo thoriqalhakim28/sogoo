@@ -12,7 +12,22 @@
 
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <style>
+            @media only screen and (max-width: 640px) {
+                .logo {
+                    display: none;
+                }
 
+                .tulisan {
+                    justify-content: center;
+                }
+
+                .tombol {
+                    padding: 0 0 0 0;
+
+                }
+            }
+        </style>
     </head>
     <body class="antialiased h-screen" style="font-family: 'Poppins', sans-serif;">
         <!-- Navbar -->
@@ -47,17 +62,17 @@
 
         <!-- Content -->
         <div class="max-w-6xl mx-auto mt-12">
-            <div class="w-full flex items-center">
+            <div class="w-full flex items-center tulisan">
                 <div class="w-1/2">
                     <div class="max-w-md">
                         <p class="font-bold text-6xl">Find Your Dream <span class="text-[#00dcaa]">Item.</span> </p>
                         <p class="font-light text-base mt-8">This is a site made for you to help find your dream item.</p>
-                        <div class="mt-8">
+                        <div class="mt-8 tombol">
                             <a href="{{ route('register') }}" class="rounded-lg bg-[#F49D1A] p-2 px-24 font-medium hover:bg-[#f0aa41]">Let's try</a>
                         </div>
                     </div>
                 </div>
-                <div class="w-1/2">
+                <div class="w-1/2 logo">
                     <img src="images/1.jpg" alt="">
                 </div>
             </div>
